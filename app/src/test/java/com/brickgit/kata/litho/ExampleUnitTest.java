@@ -1,4 +1,4 @@
-package com.brickgit.practicelitho;
+package com.brickgit.kata.litho;
 
 import org.junit.Test;
 

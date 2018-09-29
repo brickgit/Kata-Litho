@@ -1,4 +1,4 @@
-package com.brickgit.practicelitho;
+package com.brickgit.kata.litho;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
