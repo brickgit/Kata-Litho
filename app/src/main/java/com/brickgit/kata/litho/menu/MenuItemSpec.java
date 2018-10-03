@@ -1,6 +1,7 @@
 package com.brickgit.kata.litho.menu;
 
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.View;
 
 import com.facebook.litho.ClickEvent;
@@ -15,15 +16,23 @@ import com.facebook.litho.annotations.Prop;
 import com.facebook.litho.widget.Text;
 import com.facebook.yoga.YogaEdge;
 
+import java.util.Locale;
+
 /** Created by Daniel Lin on 2018/10/1. */
 @LayoutSpec
 public class MenuItemSpec {
 
   @OnCreateLayout
-  static Component onCreateLayout(ComponentContext c, @Prop final MenuModel model) {
+  static Component onCreateLayout(
+      ComponentContext c, @Prop final MenuModel model, @Prop int index) {
     return Column.create(c)
         .paddingDip(YogaEdge.ALL, 16)
-        .child(Text.create(c).text(model.getTitle()).textSizeSp(18).build())
+        .backgroundColor(index % 2 == 0 ? Color.WHITE : Color.LTGRAY)
+        .child(
+            Text.create(c)
+                .text(String.format(Locale.getDefault(), "%d. %s", index + 1, model.getTitle()))
+                .textSizeSp(18)
+                .build())
         .clickHandler(MenuItem.onClick(c))
         .build();
   }

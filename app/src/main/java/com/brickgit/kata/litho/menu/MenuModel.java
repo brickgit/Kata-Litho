@@ -2,9 +2,10 @@ package com.brickgit.kata.litho.menu;
 
 import android.support.annotation.Nullable;
 
-import com.brickgit.kata.litho.basic.SingleTextActivity;
+import com.brickgit.kata.litho.tutorial.column.ColumnActivity;
+import com.brickgit.kata.litho.tutorial.singletext.SingleTextActivity;
 
-import java.util.Collections;
+import java.util.Arrays;
 import java.util.List;
 
 import lombok.Value;
@@ -14,7 +15,9 @@ import lombok.Value;
 public class MenuModel {
 
   public static final List<MenuModel> MODELS =
-      Collections.singletonList(new MenuModel("Single Text", SingleTextActivity.class, null));
+      Arrays.asList(
+          new MenuModel("Single Text", SingleTextActivity.class, null),
+          new MenuModel("Column Component", ColumnActivity.class, null));
 
   private String title;
   @Nullable private Class cls;

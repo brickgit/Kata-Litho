@@ -41,6 +41,7 @@ public class MenuSectionSpec {
         .component(
             MenuItem.create(c)
                 .model(model)
+                .index(index)
                 .currentIndices(getUpdatedIndices(parentIndices, index))
                 .build())
         .build();
